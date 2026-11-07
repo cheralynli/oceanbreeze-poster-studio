@@ -2,6 +2,10 @@
 
 A small full-stack application that turns a brand name, product name, description, and price into a downloadable marketing poster. Generated posters are saved locally and can be reopened from history after a page refresh or server restart.
 
+## Demo
+
+![Poster Studio screen recording](docs/images/demo.gif)
+
 ## Run locally
 
 Requires **Node.js 22.13 or newer** and npm. Development and testing used Node.js 24.9.0. No API keys or separate database installation are needed.
