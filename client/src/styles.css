@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "Classical Diary";
-  src: url("/fonts/classical-diary/ClassicalDiary-Regular-Demo.ttf") format("truetype");
-  font-weight: 400;
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/cormorant-garamond/CormorantGaramond.ttf") format("truetype");
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
@@ -213,8 +213,8 @@ body::after {
 main { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 42px 24px 120px; }
 header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 4px; }
 h1 {
-  font-family: "Classical Diary", Georgia, serif;
-  font-weight: 400;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
   font-size: clamp(4rem, 10vw, 8.5rem);
   line-height: 1.1; margin: 0; color: var(--paper);
   position: relative;
