@@ -295,3 +295,33 @@ button:disabled { background: #edbac2; color: #4e566e; cursor: not-allowed; box-
 @media (prefers-reduced-motion: reduce) {
   body::before, .fish { animation: none; }
 }
+
+fieldset { display: flex; flex-direction: column; min-width: 0; border: 0; padding: 0; margin: 0; }
+fieldset:disabled input, fieldset:disabled textarea { opacity: .7; }
+button:not(:disabled), .download-button { cursor: pointer; }
+button:not(:disabled):hover, .download-button:hover { filter: brightness(1.04); }
+input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: #9d3044; }
+.field-error { color: #9d3044; font-size: .85rem; margin: -12px 0 18px; }
+.error-message { color: #822539; background: #fff0f1; border: 1px solid #d799a4; border-radius: 8px; padding: 12px; margin: 18px 0 0; }
+.generation-status { font-size: .9rem; margin: 18px 0 0; }
+.generation-status:empty { display: none; }
+.download-button { display: block; text-align: center; margin-top: 20px; padding: 12px; background: var(--ink); color: white; border-radius: 10px; font-weight: 700; text-decoration: none; }
+.download-button:focus-visible { outline: 3px solid #3676aa; outline-offset: 3px; }
+.history-header { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-bottom: 20px; }
+.history-header h2 { margin: 0; }
+.secondary-button { background: #f7f3e8; min-height: 42px; font-size: .85rem; padding: 8px 12px; }
+.history-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+.history-grid:empty { display: none; }
+.history-item { display: flex; flex-direction: column; align-items: stretch; gap: 8px; background: white; padding: 10px; text-align: left; min-width: 0; overflow-wrap: anywhere; }
+.history-item[aria-pressed="true"] { outline: 3px solid #c27b35; outline-offset: 3px; }
+.history-item img { width: 100%; height: auto; aspect-ratio: 1; border-radius: 5px; }
+.history-item span, .history-item time { font-size: .8rem; font-weight: 400; }
+.load-more { margin-top: 22px; }
+@media (max-width: 480px) {
+  .history-header { align-items: flex-start; flex-direction: column; }
+  .history-grid { grid-template-columns: 1fr; }
+}
+
+.field-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 8px; }
+.field-heading label { margin-bottom: 0; }
+.character-count { font-size: .75rem; color: #597186; }
