@@ -1,0 +1,297 @@
+@font-face {
+  font-family: "Classical Diary";
+  src: url("/fonts/classical-diary/ClassicalDiary-Regular-Demo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+:root {
+  color-scheme: light;
+  --ink: #24577f;
+  --paper: #ffffff;
+  --yellow: #f7f3e8;
+  --sea: #102b4e;
+  --sea-dark: #3676aa;
+  --sea-darker: #285b94;
+  --coral: #f27d85;
+  --orange: #f3bd7c;
+  --weed: #accd80;
+  --weed-dark: #709a62;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #184a70;
+  font-synthesis: none;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--sea);
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,.035) 12px, transparent 12px),
+    linear-gradient(0deg, rgba(54,118,170,.12) 12px, transparent 12px),
+    linear-gradient(90deg, transparent 0 32px, rgba(255,255,255,.025) 32px 44px, transparent 44px 88px),
+    linear-gradient(180deg, #193c63 0%, #102b4e 45%, #091d36 100%);
+  background-size: 96px 96px, 96px 96px, 176px 176px, 100% 100%;
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #f4fbff 0 4px, transparent 5px),
+    radial-gradient(circle, #f4fbff 0 3px, transparent 4px),
+    radial-gradient(circle, #f4fbff 0 2px, transparent 3px);
+  background-position: 8% 72%, 86% 16%, 63% 46%;
+  background-size: 190px 190px, 250px 250px, 150px 150px;
+  opacity: 0.42;
+  animation: bubbleDrift 9s steps(5, end) infinite;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  height: 92px;
+  pointer-events: none;
+  background-color: #eed09a;
+  background-image:
+    linear-gradient(90deg, #e1bc83 16px, transparent 16px),
+    linear-gradient(0deg, rgba(80, 50, 20, 0.16) 8px, transparent 8px);
+  background-size: 48px 24px, 32px 32px;
+  border-top: 5px solid #b48c5d;
+}
+
+.doodle-sea {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fish {
+  position: absolute;
+  width: 86px;
+  height: 48px;
+  border: 4px solid var(--ink);
+  border-radius: 55% 45% 48% 52% / 58% 50% 50% 42%;
+  background: var(--orange);
+  box-shadow: 5px 5px 0 rgba(36, 87, 127, 0.25);
+  animation: dumbSwim 13s steps(9, end) infinite;
+}
+
+.fish::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 10px;
+  width: 28px;
+  height: 26px;
+  border: 4px solid var(--ink);
+  border-right: 0;
+  background: var(--coral);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.fish::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 12px;
+  height: 48px;
+  background:
+    linear-gradient(0deg, transparent 0 8px, var(--ink) 8px 12px, transparent 12px 20px, var(--ink) 20px 24px, transparent 24px);
+}
+
+.eye {
+  position: absolute;
+  right: 13px;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: white;
+}
+
+.eye::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  width: 5px;
+  height: 5px;
+  background: var(--ink);
+}
+
+.mouth {
+  position: absolute;
+  right: 4px;
+  top: 30px;
+  width: 12px;
+  height: 8px;
+  border-bottom: 3px solid var(--ink);
+  transform: rotate(16deg);
+}
+
+.fish-a {
+  top: 106px;
+  left: 5vw;
+  transform: rotate(-8deg);
+}
+
+.fish-b {
+  top: 430px;
+  right: 8vw;
+  background: #f4d36d;
+  transform: rotate(5deg) scaleX(-1);
+  animation-duration: 16s;
+}
+
+.fish-c {
+  top: 250px;
+  right: 28vw;
+  width: 60px;
+  height: 38px;
+  background: #e99cb0;
+  transform: rotate(12deg);
+  animation-duration: 10s;
+}
+
+.fish-d {
+  bottom: 132px;
+  left: 34vw;
+  width: 68px;
+  height: 40px;
+  background: #b6d7a0;
+  transform: rotate(-14deg) scaleX(-1);
+  animation-duration: 18s;
+}
+
+.weed {
+  position: absolute;
+  bottom: 78px;
+  width: 22px;
+  background: var(--weed);
+  border: 4px solid var(--ink);
+  box-shadow:
+    22px 18px 0 var(--weed-dark),
+    44px -10px 0 var(--weed),
+    66px 12px 0 var(--weed-dark);
+  image-rendering: pixelated;
+}
+
+.weed-a {
+  left: 36px;
+  height: 106px;
+}
+
+.weed-b {
+  left: 16vw;
+  height: 70px;
+}
+
+.weed-c {
+  right: 18vw;
+  height: 120px;
+}
+
+.weed-d {
+  right: 52px;
+  height: 92px;
+}
+
+
+main { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 42px 24px 120px; }
+header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 4px; }
+h1 {
+  font-family: "Classical Diary", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  line-height: 1.1; margin: 0; color: var(--paper);
+  position: relative;
+  top: 10px;
+  text-shadow: 2px 3px 0 rgba(9, 29, 54, 0.45);
+}
+h2 { font-size: 1.3rem; margin: 0 0 10px; color: var(--ink); }
+p { line-height: 1.6; }
+.workspace {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 26px; align-items: start; padding: 22px;
+  border: 5px solid var(--ink); border-radius: 24px 14px 28px 13px;
+  background: var(--yellow); box-shadow: 10px 11px 0 rgba(36,87,127,.32);
+}
+.card {
+  min-width: 0; padding: 24px; border: 4px solid var(--ink);
+  border-radius: 19px 10px 24px 13px; background: var(--paper);
+  box-shadow: 6px 7px 0 rgba(36,87,127,.28);
+}
+.workspace > .card:nth-child(2) { background: var(--yellow); border-radius: 12px 23px 13px 18px; }
+.muted { color: #405f79; margin: 0 0 22px; }
+.small { font-size: .8rem; margin: 14px 0 0; }
+form { display: flex; flex-direction: column; }
+label { font-size: .9rem; font-weight: 700; margin-bottom: 8px; }
+input, textarea {
+  width: 100%; font: inherit; color: #184a70; padding: 12px;
+  border: 3px solid var(--ink); border-radius: 10px 6px 12px 7px;
+  margin-bottom: 20px; background: #ffffff; box-shadow: 3px 3px 0 rgba(36,87,127,.14);
+}
+input::placeholder, textarea::placeholder { color: #597186; opacity: 1; }
+textarea { resize: vertical; }
+input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid #3676aa; outline-offset: 3px; }
+button {
+  min-height: 48px; font: inherit; font-weight: 700; padding: 12px;
+  border: 3px solid var(--ink); border-radius: 17px 10px 15px 8px;
+  background: var(--coral); color: var(--ink); box-shadow: 4px 5px 0 var(--ink);
+}
+button:disabled { background: #edbac2; color: #4e566e; cursor: not-allowed; box-shadow: 3px 3px 0 var(--ink); }
+.template { display: block; width: 100%; height: auto; border: 3px solid var(--ink); border-radius: 10px 5px 13px 7px; }
+.history { margin-top: 28px; background: var(--paper); }
+.history p { margin-bottom: 0; }
+@keyframes bubbleDrift {
+  0% {
+    background-position: 8% 78%, 86% 22%, 63% 52%;
+  }
+  100% {
+    background-position: 8% 58%, 86% 6%, 63% 34%;
+  }
+}
+
+@keyframes dumbSwim {
+  0% {
+    margin-left: -30px;
+    margin-top: 0;
+  }
+  35% {
+    margin-left: 28px;
+    margin-top: 18px;
+  }
+  70% {
+    margin-left: -8px;
+    margin-top: -14px;
+  }
+  100% {
+    margin-left: -30px;
+    margin-top: 0;
+  }
+}
+
+
+@media (max-width: 760px) {
+  main { padding: 28px 16px 110px; }
+  header { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .workspace { grid-template-columns: 1fr; padding: 12px; gap: 22px; }
+  .card { padding: 18px; }
+  .fish { opacity: .4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before, .fish { animation: none; }
+}
